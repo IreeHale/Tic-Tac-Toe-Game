@@ -9,6 +9,8 @@
     display: grid;
     justify-content: center;
     align-content: center;
+    justify-items: center;
+    align-items: center;
     grid-template-columns: repeat(3, auto);
 }
 
@@ -16,7 +18,14 @@
     width: var(--cell-size);
     height: var(--cell-size);
     background-color: black;
-    border: 1px solid white
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 8rem;
+    font-family: sans-serif;
+    color: white;
 }
 
 .cell:first-child,
@@ -39,6 +48,33 @@
     border-bottom: none;
 }
 
-.cell.x {
-    background-color: red;
+.cell.x::before,
+.cell.x::after{
+    content: '';
+    width: calc(var(--mark-size) * .15);
+    height: var(--mark-size);
+    background-color: white;
+}
+
+.cell.x::before{
+    transform: rotate(45deg);
+}
+
+.cell.x::after{
+    transform: rotate(-45deg);
+}
+
+.cell.circle::before,
+.cell.circle::after{
+    content: '';
+    position: absolute;
+    width: var(--mark-size);
+    height: var(--mark-size);
+    background-color: white
+}
+
+.cell.circle::before {
+    width: var(--mark-size);
+    height: var(--mark-size);
+    background-color: black 
 }
