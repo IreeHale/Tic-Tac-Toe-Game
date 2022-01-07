@@ -35,3 +35,41 @@
     grid-template-rows: 33% 33% 33%;
     max-width: 300px;
 }
+
+.tile {
+    border: 1px solid white;
+    min-width: 100px;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 50px;
+}
+
+.playerX {
+    color: turquoise;
+}
+
+.playerO {
+    color: lightseagreen;
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
+
+#reset {
+    background-color: crimson;
+    color: whitesmoke;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    font-size: 20px;
+    margin-left: 1em;
+    cursor: pointer;
+}
