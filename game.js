@@ -22,6 +22,37 @@ window.addEventListener('DOMContentLoaded', () => {
         [2, 4, 6]
     ];
 
+    const announce = (type) => {
+        switch(type) {
+            case PLAYERO_wON:
+                announcer.innerHTML = 'Player <p class="playerO">O</span> Won';
+                break;
+            case PLAYERX_WON:
+                announcer.innerHTML = 'Player <p class="playerX">X</p> Won';
+                break;
+            case TIE: 
+                announcer.innerHTML = 'tie';
+        }
+        announcer.classList.remove('hide');
+    };
+
+    const changePlayer = () => {
+        playerDisplay.classList.remove(`player${currentPlayer}`);
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+        playerDisplay.innerText = currentPlayer;
+        playerDisplay.classList.add(`player${currentPlayer}`);
+    }
+
+    const userAction = (tile, index) => {
+        if(isvalidAction(tile) && isGameActive) {
+            tile.innerText = currentPlayer;
+            tile.classList.add(`player${currentPlayer}`);
+            updateBoard(index);
+            handleResultValidation();
+            ChangePlayer();
+        }
+    }
+
     tiles.forEach((tile, index) => {
         tile.addEventListener('click', () => userAction(tile, index));
     });
