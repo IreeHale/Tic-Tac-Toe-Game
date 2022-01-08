@@ -22,6 +22,29 @@ window.addEventListener('DOMContentLoaded', () => {
         [2, 4, 6]
     ];
 
+    function handleREsultValidation() {
+        let roundWon = false;
+        for (let i = 0; i <= 7; i++) {
+            const winCondition = winningConditions[i];
+            const a = board[widCondition[0]];
+            const b = board[winCondition[1]];
+            const c = board[winCondition[2]];
+            if (a === '' || b === '' || c === '') {
+                continue;
+            }
+            if (a === b && b === c) {
+                roundWon = true;
+                break;
+            }
+        }
+
+        if(roundWon) {
+            announce(currentPlayer === 'X' ? PLAYER_WON : PLAYER_WON);
+            isGameActive = false;
+            return;
+        }
+    }
+
     const announce = (type) => {
         switch(type) {
             case PLAYERO_wON:
