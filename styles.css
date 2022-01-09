@@ -1,3 +1,36 @@
 body{
+    font-family: sans-serif;
+}
+
+h1 {
+    font-size: 54px;
+    text-transform: uppercase;
+}
+
+.container {
+    padding: 48px;
+    height: 150vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#gameboard {
+    width: 457px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    border: black solid 1px;
+}
+
+.box {
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    border: 1px solid black;
     background-color: red;
 }
