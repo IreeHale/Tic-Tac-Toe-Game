@@ -1,6 +1,6 @@
 Tic-Tac-Toe Game
 -------------------
-Technologies:
+Built with the following technologies:
 - HTML
 - CSS
 - Javascript
